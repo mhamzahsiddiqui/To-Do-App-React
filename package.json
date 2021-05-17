@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://mhamzahsiddiqui.github.io/To-Do-App-React",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -23,7 +24,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-    },
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -40,6 +41,21 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
     ]
   }
 }
